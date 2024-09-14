@@ -57,6 +57,19 @@ a:hover {
     color: var(--alt-color);
 }
 
+h2 > span {
+    font-weight: normal;
+}
+
+main > hr {
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+}
+
+img.invert {
+    filter: invert(1);
+}
+
 /* Per section */
 
 header {
@@ -172,6 +185,18 @@ section img {
     height: unset;
 } */
 
+#experience,
+#work-portfolio {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#experience img {
+    width: 200px;
+    height: 200px;
+}
+
 #work-portfolio img {
     width: 200px;
     height: 200px;
@@ -236,6 +261,7 @@ footer {
 
 footer .backTop {
     text-align: right;
+    margin-bottom: 1rem;
 }
 
 footer ul {
