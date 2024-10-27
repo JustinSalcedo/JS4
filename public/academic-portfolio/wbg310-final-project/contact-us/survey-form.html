@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Survey Form | Justin Salcedo</title>
+
+        <link rel="preconnect" href="https://rsms.me/" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+        <base href="../" />
+        <link href="smartmenus/sm-core-css.css" rel="stylesheet" />
+        <link href="smartmenus/sm-mine.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/form.css" />
+
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="smartmenus/jquery.smartmenus.min.js"></script>
+        <script>
+            $(() => {
+                // $('#burger').on('click', () => {
+                //     $('.left-sidebar').toggle()
+                // })
+                $('.sm').smartmenus({
+                    showFunction: function ($ul, complete) {
+                        $ul.slideDown(250, complete)
+                    },
+                    hideFunction: function ($ul, complete) {
+                        $ul.slideUp(250, complete)
+                    },
+                })
+
+                $('#survey').validate({
+                    rules: {
+                        email: {required: true, email: true},
+                        memberId: {
+                            required: true,
+                            number: true,
+                            rangelength: [6, 6],
+                        },
+                    },
+                    messages: {
+                        email: {
+                            required: 'Please supply your e-mail address.',
+                            email: 'This is not a valid e-mail address.',
+                        },
+                        memberId: {
+                            required: 'Please supply your member ID',
+                            number: 'Your member ID is a 6-digit number',
+                            rangelength: 'A member ID has 6 digit numbers',
+                        },
+                    },
+                    errorPlacement: function (error, element) {
+                        if (element.is(':radio') || element.is(':checkbox')) {
+                            error.appendTo(element.parent())
+                        } else {
+                            error.insertAfter(element)
+                        }
+                    },
+                })
+            })
+
+            function onSubmit() {
+                validateForm()
+            }
+
+            const ROLE_NAMES = {
+                android: 'Android',
+                backend: 'Backend',
+                frontend: 'Frontend',
+                fullStack: 'Full Stack',
+                ios: 'iOS',
+            }
+
+            function validateForm() {
+                sendSuccessMsg('')
+
+                const firstName = $('#firstName').val()
+                const lastName = $('#lastName').val()
+                const email = $('#email').val()
+
+                if (!firstName) {
+                    sendErrorMsg('We need your first name please')
+                    return
+                }
+
+                if (!lastName) {
+                    sendErrorMsg('We need your last name please')
+                    return
+                }
+
+                if (!email) {
+                    sendErrorMsg('We need your email please')
+                    return
+                }
+
+                if (
+                    !email.match(/^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/)
+                        ?.length
+                ) {
+                    sendErrorMsg('Please enter a valid email')
+                    return
+                }
+
+                var role = ROLE_NAMES[getRole()]
+                if (!role) {
+                    sendErrorMsg('Please select a role')
+                    return
+                }
+
+                sendErrorMsg('')
+                // sendSuccessMsg(
+                //     `Thank you ${firstName}!<br />You have voted for the ${role} developer boot camp.`,
+                // )
+                alert(
+                    `Thank you ${firstName}! You have voted for the ${role} developer boot camp.`,
+                )
+            }
+
+            function getRole() {
+                const roles = document.getElementsByName('role')
+
+                for (let i = 0; i < roles.length; i++) {
+                    const role = roles[i]
+                    if (role.checked) return role.value
+                }
+
+                return false
+            }
+
+            function sendErrorMsg(text) {
+                const errorMsgBox = $('#error-msg')
+                errorMsgBox.html(`<span>${text}</span>`)
+            }
+
+            function sendSuccessMsg(text) {
+                const successMsgBox = $('#success-msg')
+                successMsgBox.html(`<span>${text}</span>`)
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <header class="main-header">
+                <div class="topbar sm">
+                    <button id="burger">
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                    </button>
+                    <div class="logo-container">
+                        <img src="images/logo.png" alt="JS logo" />
+                    </div>
+                    <div class="site-heading-container">
+                        <span>Justin Salcedo<span>'s Blog</span></span>
+                    </div>
+                </div>
+            </header>
+            <div class="mid-container">
+                <section class="left-sidebar">
+                    <p>Left sidebar content goes here</p>
+                </section>
+                <main class="main-content">
+                    <!-- <section class="right-sidebar">
+                        <p>Right sidebar content goes here</p>
+                    </section> -->
+                    <section class="content-body">
+                        <nav>
+                            <ul class="sm sm-mine">
+                                <li><a href="index.html">Home</a></li>
+                                <li>
+                                    <a href="about-us/index.html">About Us</a>
+                                    <ul>
+                                        <li>
+                                            <a href="about-us/story.html"
+                                                >Story</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a>Our Offices</a>
+                                            <ul>
+                                                <li>
+                                                    <a
+                                                        href="about-us/offices/san-marcos-ca.html"
+                                                        >San Marcos, CA</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="about-us/offices/valley-center-ca.html"
+                                                        >Valley Center, CA</a
+                                                    >
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="contact-us/index.html"
+                                        >Contact Us</a
+                                    >
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="contact-us/user-support.html"
+                                                >User Support</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="contact-us/survey-form.html"
+                                                >Survey Form</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a>Products</a>
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="products/libellus-gallery.html"
+                                                >Libellus</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a>Courses</a>
+                                            <ul>
+                                                <li>
+                                                    <a
+                                                        href="products/courses/frontend-development.html"
+                                                        >Frontend Development</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="products/courses/backend-development.html"
+                                                        >Backend Development</a
+                                                    >
+                                                </li>
+                                                <!-- <li>
+                                                    <a
+                                                        >Software Testing</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        >Mobile Development</a
+                                                    >
+                                                </li> -->
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- <li>
+                                    <a>Services</a>
+                                    <ul>
+                                        <li><a>Consultancy</a></li>
+                                        <li>
+                                            <a>Project Management</a>
+                                        </li>
+                                    </ul>
+                                </li> -->
+                                <li>
+                                    <a>Technologies</a>
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="technologies/frontend-web.html"
+                                                >Frontend Web</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <header><h1>Survey form</h1></header>
+                        <p>
+                            Vote for the next boot camp session and get helpful
+                            tips and guides about the software development role
+                            that interests you.
+                        </p>
+                        <div class="form-wrapper">
+                            <form
+                                action=""
+                                method="post"
+                                name="survey"
+                                id="survey"
+                                onsubmit="onSubmit()">
+                                <div class="form-body">
+                                    <section class="form-section">
+                                        <div class="input-group">
+                                            <label for="firstName"
+                                                >First name:</label
+                                            >
+                                            <input
+                                                type="text"
+                                                name="firstName"
+                                                id="firstName"
+                                                placeholder="e.g., John"
+                                                class="required"
+                                                title="Please type your first name." />
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="lastName"
+                                                >Last name:</label
+                                            >
+                                            <input
+                                                type="text"
+                                                name="lastName"
+                                                id="lastName"
+                                                placeholder="e.g., Doe"
+                                                class="required"
+                                                title="Please type your last name." />
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="email"
+                                                >Email address:</label
+                                            >
+                                            <input
+                                                type="text"
+                                                name="email"
+                                                id="email"
+                                                placeholder="e.g., johndoe@email.com" />
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="memberId"
+                                                >Member ID#:</label
+                                            >
+                                            <input
+                                                type="text"
+                                                name="memberId"
+                                                id="memberId" />
+                                        </div>
+                                    </section>
+                                    <section class="form-section">
+                                        <div class="radio-group" id="roleGroup">
+                                            <p>Select a developer role:</p>
+                                            <div class="radio-input">
+                                                <input
+                                                    type="radio"
+                                                    name="role"
+                                                    value="frontend"
+                                                    class="required"
+                                                    title="Please select an option" />
+                                                <span>Frontend</span>
+                                            </div>
+                                            <div class="radio-input">
+                                                <input
+                                                    type="radio"
+                                                    name="role"
+                                                    value="backend" />
+                                                <span>Backend</span>
+                                            </div>
+                                            <div class="radio-input">
+                                                <input
+                                                    type="radio"
+                                                    name="role"
+                                                    value="fullStack" />
+                                                <span>Full Stack</span>
+                                            </div>
+                                            <div class="radio-input">
+                                                <input
+                                                    type="radio"
+                                                    name="role"
+                                                    value="android" />
+                                                <span>Android</span>
+                                            </div>
+                                            <div class="radio-input">
+                                                <input
+                                                    type="radio"
+                                                    name="role"
+                                                    value="ios" />
+                                                <span>iOS</span>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <br />
+                                <div class="button-group">
+                                    <input type="submit" value="Submit" />
+                                    <input type="reset" value="Clear Form" />
+                                </div>
+                            </form>
+                            <!-- <section class="msg-areas">
+                                <div id="error-msg"></div>
+                                <div id="success-msg"></div>
+                            </section> -->
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                    </section>
+                    <footer class="main-footer">
+                        <div class="footer-container">
+                            <div class="backTop">
+                                <a onclick="window.scrollTo(0, 0)"
+                                    >Back to top &uarr;</a
+                                >
+                            </div>
+                            <div class="footer-links">
+                                <a href="legal-info.html">Legal Information</a>
+                                <a href="references.html"
+                                    >References and Credits</a
+                                >
+                            </div>
+                            <!-- <h2>Graphics</h2>
+                            <ul>
+                                <li>
+                                    <a href="graphics.txt">Citations document</a>
+                                </li>
+                            </ul> -->
+                            <div class="author">
+                                <p>
+                                    Created in October 2024 by
+                                    <a href="https://justinsalcedo.com"
+                                        ><strong>Justin Salcedo</strong></a
+                                    >
+                                    <br />for
+                                    <em
+                                        >WBG 310: Interactive Web Page Scripting
+                                        with Lab</em
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </footer>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

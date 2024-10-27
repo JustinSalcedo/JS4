@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gallery - Libellus | Justin Salcedo</title>
+
+        <link rel="preconnect" href="https://rsms.me/" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+        <base href="../" />
+        <link href="smartmenus/sm-core-css.css" rel="stylesheet" />
+        <link href="smartmenus/sm-mine.css" rel="stylesheet" />
+        <link href="fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <script src="js/jquery-1.7.2.min.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+        <script src="smartmenus/jquery.smartmenus.min.js"></script>
+        <script src="fancybox/jquery.fancybox-1.3.4.min.js"></script>
+        <script>
+            $(() => {
+                // $('#burger').on('click', () => {
+                //     $('.left-sidebar').toggle()
+                // })
+                $('.sm').smartmenus({
+                    showFunction: function ($ul, complete) {
+                        $ul.slideDown(250, complete)
+                    },
+                    hideFunction: function ($ul, complete) {
+                        $ul.slideUp(250, complete)
+                    },
+                })
+
+                const fancyboxOpts = {
+                    overlayColor: 'rgb(0, 16, 102)',
+                    overlayOpacity: 0.3,
+                    transitionIn: 'elastic',
+                    transitionOut: 'elastic',
+                    easingIn: 'easeInSine',
+                    easingOut: 'easeOutSine',
+                    titlePosition: 'outside',
+                    cyclic: true,
+                }
+                // $('#gallery a').fancybox({
+                //     overlayColor: 'rgb(0, 16, 102)',
+                //     overlayOpacity: 0.3,
+                //     transitionIn: 'elastic',
+                //     transitionOut: 'elastic',
+                //     easingIn: 'easeInSine',
+                //     easingOut: 'easeOutSine',
+                //     titlePosition: 'outside',
+                //     cyclic: true,
+                // })
+                $('#theWatcher').fancybox({
+                    ...fancyboxOpts,
+                    onComplete: () => {
+                        $('#fancybox-img').wrap(
+                            $('<a />', {href: 'libellus/the-watcher.html'}),
+                        )
+                    },
+                })
+                $('#timeline').fancybox({
+                    ...fancyboxOpts,
+                    onComplete: () => {
+                        $('#fancybox-img').wrap(
+                            $('<a />', {href: 'libellus/timeline.html'}),
+                        )
+                    },
+                })
+                $('#customization').fancybox({
+                    ...fancyboxOpts,
+                    onComplete: () => {
+                        $('#fancybox-img').wrap(
+                            $('<a />', {href: 'libellus/customization.html'}),
+                        )
+                    },
+                })
+                $('#quickStats').fancybox({
+                    ...fancyboxOpts,
+                    onComplete: () => {
+                        $('#fancybox-img').wrap(
+                            $('<a />', {href: 'libellus/quick-stats.html'}),
+                        )
+                    },
+                })
+                $('#cloudSync').fancybox({
+                    ...fancyboxOpts,
+                    onComplete: () => {
+                        $('#fancybox-img').wrap(
+                            $('<a />', {href: 'libellus/cloud-sync.html'}),
+                        )
+                    },
+                })
+            })
+            console.log('All good')
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <header class="main-header">
+                <div class="topbar sm">
+                    <button id="burger">
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                    </button>
+                    <div class="logo-container">
+                        <img src="images/logo.png" alt="JS logo" />
+                    </div>
+                    <div class="site-heading-container">
+                        <span>Justin Salcedo<span>'s Blog</span></span>
+                    </div>
+                </div>
+            </header>
+            <div class="mid-container">
+                <section class="left-sidebar">
+                    <p>Left sidebar content goes here</p>
+                </section>
+                <main class="main-content">
+                    <!-- <section class="right-sidebar">
+                        <p>Right sidebar content goes here</p>
+                    </section> -->
+                    <section class="content-body">
+                        <nav>
+                            <ul class="sm sm-mine">
+                                <li><a href="index.html">Home</a></li>
+                                <li>
+                                    <a href="about-us/index.html">About Us</a>
+                                    <ul>
+                                        <li>
+                                            <a href="about-us/story.html"
+                                                >Story</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a>Our Offices</a>
+                                            <ul>
+                                                <li>
+                                                    <a
+                                                        href="about-us/offices/san-marcos-ca.html"
+                                                        >San Marcos, CA</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="about-us/offices/valley-center-ca.html"
+                                                        >Valley Center, CA</a
+                                                    >
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="contact-us/index.html"
+                                        >Contact Us</a
+                                    >
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="contact-us/user-support.html"
+                                                >User Support</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="contact-us/survey-form.html"
+                                                >Survey Form</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a>Products</a>
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="products/libellus-gallery.html"
+                                                >Libellus</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a>Courses</a>
+                                            <ul>
+                                                <li>
+                                                    <a
+                                                        href="products/courses/frontend-development.html"
+                                                        >Frontend Development</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="products/courses/backend-development.html"
+                                                        >Backend Development</a
+                                                    >
+                                                </li>
+                                                <!-- <li>
+                                                    <a
+                                                        >Software Testing</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        >Mobile Development</a
+                                                    >
+                                                </li> -->
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- <li>
+                                    <a>Services</a>
+                                    <ul>
+                                        <li><a>Consultancy</a></li>
+                                        <li>
+                                            <a>Project Management</a>
+                                        </li>
+                                    </ul>
+                                </li> -->
+                                <li>
+                                    <a>Technologies</a>
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="technologies/frontend-web.html"
+                                                >Frontend Web</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <header><h1>Libellus Gallery</h1></header>
+                        <p>
+                            Created by Justin Salcedo and his development team,
+                            Libellus is a personal management and organization
+                            app that assists with daily events and tasks. Its
+                            schedule planning features help users recover
+                            precious time to do what they love. Free and with no
+                            ads, Libellus fights procrastination and ADHD with
+                            timers and notifications.
+                        </p>
+                        <p>
+                            Get it on
+                            <a
+                                href="https://play.google.com/store/apps/details?id=com.zeeth.libellus"
+                                >Google Play</a
+                            >
+                        </p>
+                        <section id="gallery">
+                            <a
+                                href="images/large/1.png"
+                                rel="gallery"
+                                title="The Watcher"
+                                id="theWatcher"
+                                ><img
+                                    src="images/thumb/1.jpg"
+                                    alt="The Watcher"
+                            /></a>
+                            <a
+                                href="images/large/2.png"
+                                rel="gallery"
+                                title="Timeline"
+                                id="timeline"
+                                ><img src="images/thumb/2.jpg" alt="Timeline"
+                            /></a>
+                            <a
+                                href="images/large/3.png"
+                                rel="gallery"
+                                title="Customization"
+                                id="customization"
+                                ><img
+                                    src="images/thumb/3.jpg"
+                                    alt="Customization"
+                            /></a>
+                            <a
+                                href="images/large/4.png"
+                                rel="gallery"
+                                title="Quick Stats"
+                                id="quickStats"
+                                ><img
+                                    src="images/thumb/4.jpg"
+                                    alt="Quick Stats"
+                            /></a>
+                            <a
+                                href="images/large/5.png"
+                                rel="gallery"
+                                title="Cloud Sync"
+                                id="cloudSync"
+                                ><img src="images/thumb/5.jpg" alt="Cloud Sync"
+                            /></a>
+                        </section>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <div>
+                            <p>
+                                Graphics created by Justin Salcedo for Libellus
+                                on
+                                <a
+                                    href="https://play.google.com/store/apps/details?id=com.zeeth.libellus"
+                                    >Google Play</a
+                                >
+                                on September 13, 2024
+                            </p>
+                        </div>
+                    </section>
+                    <footer class="main-footer">
+                        <div class="footer-container">
+                            <div class="backTop">
+                                <a onclick="window.scrollTo(0, 0)"
+                                    >Back to top &uarr;</a
+                                >
+                            </div>
+                            <div class="footer-links">
+                                <a href="legal-info.html">Legal Information</a>
+                                <a href="references.html"
+                                    >References and Credits</a
+                                >
+                            </div>
+                            <!-- <h2>Graphics</h2>
+                            <ul>
+                                <li>
+                                    <a href="graphics.txt">Citations document</a>
+                                </li>
+                            </ul> -->
+                            <div class="author">
+                                <p>
+                                    Created in October 2024 by
+                                    <a href="https://justinsalcedo.com"
+                                        ><strong>Justin Salcedo</strong></a
+                                    >
+                                    <br />for
+                                    <em
+                                        >WBG 310: Interactive Web Page Scripting
+                                        with Lab</em
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </footer>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

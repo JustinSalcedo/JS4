@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>References and Credits | Justin Salcedo</title>
+
+        <link rel="preconnect" href="https://rsms.me/" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+        <link href="smartmenus/sm-core-css.css" rel="stylesheet" />
+        <link href="smartmenus/sm-mine.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="smartmenus/jquery.smartmenus.min.js"></script>
+        <script>
+            $(() => {
+                // $('#burger').on('click', () => {
+                //     $('.left-sidebar').toggle()
+                // })
+                $('.sm').smartmenus({
+                    showFunction: function ($ul, complete) {
+                        $ul.slideDown(250, complete)
+                    },
+                    hideFunction: function ($ul, complete) {
+                        $ul.slideUp(250, complete)
+                    },
+                })
+            })
+            console.log('All good')
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <header class="main-header">
+                <div class="topbar sm">
+                    <button id="burger">
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                    </button>
+                    <div class="logo-container">
+                        <img src="images/logo.png" alt="JS logo" />
+                    </div>
+                    <div class="site-heading-container">
+                        <span>Justin Salcedo<span>'s Blog</span></span>
+                    </div>
+                </div>
+            </header>
+            <div class="mid-container">
+                <section class="left-sidebar">
+                    <p>Left sidebar content goes here</p>
+                </section>
+                <main class="main-content">
+                    <!-- <section class="right-sidebar">
+                        <p>Right sidebar content goes here</p>
+                    </section> -->
+                    <section class="content-body">
+                        <nav>
+                            <ul class="sm sm-mine">
+                                <li><a href="index.html">Home</a></li>
+                                <li>
+                                    <a href="about-us/index.html">About Us</a>
+                                    <ul>
+                                        <li>
+                                            <a href="about-us/story.html"
+                                                >Story</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a>Our Offices</a>
+                                            <ul>
+                                                <li>
+                                                    <a
+                                                        href="about-us/offices/san-marcos-ca.html"
+                                                        >San Marcos, CA</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="about-us/offices/valley-center-ca.html"
+                                                        >Valley Center, CA</a
+                                                    >
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="contact-us/index.html"
+                                        >Contact Us</a
+                                    >
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="contact-us/user-support.html"
+                                                >User Support</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="contact-us/survey-form.html"
+                                                >Survey Form</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a>Products</a>
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="products/libellus-gallery.html"
+                                                >Libellus</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a>Courses</a>
+                                            <ul>
+                                                <li>
+                                                    <a
+                                                        href="products/courses/frontend-development.html"
+                                                        >Frontend Development</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="products/courses/backend-development.html"
+                                                        >Backend Development</a
+                                                    >
+                                                </li>
+                                                <!-- <li>
+                                                    <a
+                                                        >Software Testing</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        >Mobile Development</a
+                                                    >
+                                                </li> -->
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- <li>
+                                    <a>Services</a>
+                                    <ul>
+                                        <li><a>Consultancy</a></li>
+                                        <li>
+                                            <a>Project Management</a>
+                                        </li>
+                                    </ul>
+                                </li> -->
+                                <li>
+                                    <a>Technologies</a>
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="technologies/frontend-web.html"
+                                                >Frontend Web</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <header><h1>References and Credits</h1></header>
+                        <h2>About Us</h2>
+                        <h3>Graphics</h3>
+                        <p>
+                            Salcedo, J. (2019).
+                            <em
+                                >Justin Salcedo with black shirt in front of a
+                                blue screen </em
+                            >[Photograph]. Own work, Escondido, California, USA.
+                            <a
+                                href="https://github.com/JustinSalcedo/JS/blob/master/images/Justin%20Salcedo.jpg?raw=true"
+                                >https://github.com/JustinSalcedo/JS/blob/master/images/Justin%20Salcedo.jpg?raw=true</a
+                            >
+                        </p>
+
+                        <h2>Backend Development Course</h2>
+                        <h3>Graphics</h3>
+                        <p>
+                            <em>Roadmap.sh.</em> (2024).
+                            <em>Backend Developer Roadmap</em>
+                            [Diagram]. Retrieved October 26, 2024, from
+                            <a href="https://roadmap.sh/backend"
+                                >https://roadmap.sh/backend</a
+                            >
+                        </p>
+
+                        <h2>Frontend Development Course</h2>
+                        <h3>Graphics</h3>
+                        <p>
+                            <em>Roadmap.sh.</em> (2024).
+                            <em>Frontend Developer Roadmap</em>
+                            [Diagram]. Retrieved October 26, 2024, from
+                            <a href="https://roadmap.sh/frontend"
+                                >https://roadmap.sh/frontend</a
+                            >
+                        </p>
+
+                        <h2>Frontend Web Technologies</h2>
+                        <h3>References</h3>
+                        <p>
+                            <em>MDN contributors.</em> (2024).
+                            <em>JavaScript.</em>
+                            <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                                >https://developer.mozilla.org/en-US/docs/Web/JavaScript</a
+                            >
+                        </p>
+                        <p>
+                            <em>W3C.</em> (2024). <em>What is CSS?</em>
+                            <a
+                                href="https://www.w3.org/Style/CSS/Overview.en.html"
+                                >https://www.w3.org/Style/CSS/Overview.en.html</a
+                            >
+                        </p>
+                        <p>
+                            <em>WHATWG.</em> (2024). <em>HTML standard.</em>
+                            <a
+                                href="https://html.spec.whatwg.org/multipage/introduction.html"
+                                >https://html.spec.whatwg.org/multipage/introduction.html</a
+                            >
+                        </p>
+                        <h3>Graphics</h3>
+                        <p>
+                            <em>Rudloff.</em> (2016).
+                            <em>CSS3 logo and wordmark</em>
+                            [Illustration]. Own work. Retrieved from Wikimedia.
+                            <a
+                                href="https://commons.wikimedia.org/wiki/File:CSS3_logo_and_wordmark.svg"
+                                >https://commons.wikimedia.org/wiki/File:CSS3_logo_and_wordmark.svg</a
+                            >
+                        </p>
+                        <p>
+                            <em>W3C.</em> (2011).
+                            <em>HTML5 logo and wordmark</em> [Illustration]. Own
+                            work. Retrieved from Wikimedia.
+                            <a
+                                href="https://commons.wikimedia.org/wiki/File:HTML5_logo_and_wordmark.svg"
+                                >https://commons.wikimedia.org/wiki/File:HTML5_logo_and_wordmark.svg</a
+                            >
+                        </p>
+                        <p>
+                            Williams, C. (2011).
+                            <em>Unofficial JavaScript logo</em>
+                            [Illustration]. Own work. Retrieved from Wikipedia.
+                            <a
+                                href="https://en.wikipedia.org/wiki/File:JavaScript-logo.png"
+                                >https://en.wikipedia.org/wiki/File:JavaScript-logo.png</a
+                            >
+                        </p>
+
+                        <h2>Our Offices > San Marcos, CA Office</h2>
+                        <h3>Graphics</h3>
+                        <p>
+                            <em>Google Maps.</em> (2024). [Map of San Marcos,
+                            California, US]. Retrieved October 26, 2024, from
+                            <a href="https://maps.app.goo.gl/dmKQ2xzPTdt8cHeq9"
+                                >https://maps.app.goo.gl/dmKQ2xzPTdt8cHeq9</a
+                            >
+                        </p>
+
+                        <h2>Our Offices > Valley Center, CA office</h2>
+                        <h3>Graphics</h3>
+                        <p>
+                            <em>Google Maps.</em> (2024). [Map of Valley Center,
+                            California, US]. Retrieved October 26, 2024, from
+                            <a href="https://maps.app.goo.gl/H1ANUcyQWpmvuLGU6"
+                                >https://maps.app.goo.gl/H1ANUcyQWpmvuLGU6</a
+                            >
+                        </p>
+
+                        <h2>Products > Libellus Gallery; topic pages</h2>
+                        <h3>References</h3>
+                        <p>
+                            Salcedo, J. (2024). <em>Libellus.</em>
+                            <a
+                                href="https://play.google.com/store/apps/details?id=com.zeeth.libellus"
+                                >https://play.google.com/store/apps/details?id=com.zeeth.libellus</a
+                            >
+                        </p>
+
+                        <h3>Graphics</h3>
+                        <p>
+                            Salcedo, J. (2024).
+                            <em>Cloud Sync</em> [Illustration]. Own work.
+                            Retrieved from
+                            <a
+                                href="https://play-lh.googleusercontent.com/li1Bx2DV86HchfoUmkO25E0SRnIG76dCDlG0YgHQMsL0n6Mih-MrelmPtpinx-ORd-33=w2560-h1440"
+                                >https://play-lh.googleusercontent.com/li1Bx2DV86HchfoUmkO25E0SRnIG76dCDlG0YgHQMsL0n6Mih-MrelmPtpinx-ORd-33=w2560-h1440</a
+                            >
+                        </p>
+                        <p>
+                            Salcedo, J. (2024). <em>Customization</em>
+                            [Illustration]. Own work. Retrieved from
+                            <a
+                                href="https://play-lh.googleusercontent.com/tn-TtbtKXa2a06bFzRRubOig8yexKN_IRj1hO2SzI22xPim6lC-K4MQNQJG-277ks8E=w2560-h1440"
+                                >https://play-lh.googleusercontent.com/tn-TtbtKXa2a06bFzRRubOig8yexKN_IRj1hO2SzI22xPim6lC-K4MQNQJG-277ks8E=w2560-h1440</a
+                            >
+                        </p>
+                        <p>
+                            Salcedo, J. (2024).
+                            <em>Quick Stats</em> [Illustration]. Own work.
+                            Retrieved from
+                            <a
+                                href="https://play-lh.googleusercontent.com/vJWBBDJkSgekgOhlhn1ucHiz8N9ov-lbtWNITiJSJKB2SW7wHufeAuB_S8i9GlTvNlg=w2560-h1440"
+                                >https://play-lh.googleusercontent.com/vJWBBDJkSgekgOhlhn1ucHiz8N9ov-lbtWNITiJSJKB2SW7wHufeAuB_S8i9GlTvNlg=w2560-h1440</a
+                            >
+                        </p>
+                        <p>
+                            Salcedo, J. (2024).
+                            <em>The Watcher</em> [Illustration]. Own work.
+                            Retrieved from
+                            <a
+                                href="https://play-lh.googleusercontent.com/dm75SH7r9otZCBIeG88AlQelyPuU1gJr8U7AWQIYF2HodqKfIjXCCt-ePg6EvK7sJ-k=w2560-h1440"
+                                >https://play-lh.googleusercontent.com/dm75SH7r9otZCBIeG88AlQelyPuU1gJr8U7AWQIYF2HodqKfIjXCCt-ePg6EvK7sJ-k=w2560-h1440</a
+                            >
+                        </p>
+                        <p>
+                            Salcedo, J. (2024).
+                            <em>Timeline</em> [Illustration]. Own work.
+                            Retrieved from
+                            <a
+                                href="https://play-lh.googleusercontent.com/OfiWwwqPLqbMPyFu5OrKsRlEorH5wXHoZal10mSaLIvzVej-sLjqqWQ_TCU59uLLB1CD=w2560-h1440"
+                                >https://play-lh.googleusercontent.com/OfiWwwqPLqbMPyFu5OrKsRlEorH5wXHoZal10mSaLIvzVej-sLjqqWQ_TCU59uLLB1CD=w2560-h1440</a
+                            >
+                        </p>
+                    </section>
+                    <footer class="main-footer">
+                        <div class="footer-container">
+                            <div class="backTop">
+                                <a onclick="window.scrollTo(0, 0)"
+                                    >Back to top &uarr;</a
+                                >
+                            </div>
+                            <div class="footer-links">
+                                <a href="legal-info.html">Legal Information</a>
+                                <a href="references.html"
+                                    >References and Credits</a
+                                >
+                            </div>
+                            <!-- <h2>Graphics</h2>
+                            <ul>
+                                <li>
+                                    <a href="graphics.txt">Citations document</a>
+                                </li>
+                            </ul> -->
+                            <div class="author">
+                                <p>
+                                    Created in October 2024 by
+                                    <a href="https://justinsalcedo.com"
+                                        ><strong>Justin Salcedo</strong></a
+                                    >
+                                    <br />for
+                                    <em
+                                        >WBG 310: Interactive Web Page Scripting
+                                        with Lab</em
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </footer>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

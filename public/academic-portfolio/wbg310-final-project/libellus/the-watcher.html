@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>The Watcher - Libellus | Justin Salcedo</title>
+
+        <link rel="preconnect" href="https://rsms.me/" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+        <base href="../" />
+        <link href="smartmenus/sm-core-css.css" rel="stylesheet" />
+        <link href="smartmenus/sm-mine.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="smartmenus/jquery.smartmenus.min.js"></script>
+        <script>
+            $(() => {
+                // $('#burger').on('click', () => {
+                //     $('.left-sidebar').toggle()
+                // })
+                $('.sm').smartmenus({
+                    showFunction: function ($ul, complete) {
+                        $ul.slideDown(250, complete)
+                    },
+                    hideFunction: function ($ul, complete) {
+                        $ul.slideUp(250, complete)
+                    },
+                })
+            })
+            console.log('All good')
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <header class="main-header">
+                <div class="topbar sm">
+                    <button id="burger">
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                    </button>
+                    <div class="logo-container">
+                        <img src="images/logo.png" alt="JS logo" />
+                    </div>
+                    <div class="site-heading-container">
+                        <span>Justin Salcedo<span>'s Blog</span></span>
+                    </div>
+                </div>
+            </header>
+            <div class="mid-container">
+                <section class="left-sidebar">
+                    <p>Left sidebar content goes here</p>
+                </section>
+                <main class="main-content">
+                    <!-- <section class="right-sidebar">
+                        <p>Right sidebar content goes here</p>
+                    </section> -->
+                    <section class="content-body">
+                        <nav>
+                            <ul class="sm sm-mine">
+                                <li><a href="index.html">Home</a></li>
+                                <li>
+                                    <a href="about-us/index.html">About Us</a>
+                                    <ul>
+                                        <li>
+                                            <a href="about-us/story.html"
+                                                >Story</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a>Our Offices</a>
+                                            <ul>
+                                                <li>
+                                                    <a
+                                                        href="about-us/offices/san-marcos-ca.html"
+                                                        >San Marcos, CA</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="about-us/offices/valley-center-ca.html"
+                                                        >Valley Center, CA</a
+                                                    >
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="contact-us/index.html"
+                                        >Contact Us</a
+                                    >
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="contact-us/user-support.html"
+                                                >User Support</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="contact-us/survey-form.html"
+                                                >Survey Form</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a>Products</a>
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="products/libellus-gallery.html"
+                                                >Libellus</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a>Courses</a>
+                                            <ul>
+                                                <li>
+                                                    <a
+                                                        href="products/courses/frontend-development.html"
+                                                        >Frontend Development</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="products/courses/backend-development.html"
+                                                        >Backend Development</a
+                                                    >
+                                                </li>
+                                                <!-- <li>
+                                                    <a
+                                                        >Software Testing</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        >Mobile Development</a
+                                                    >
+                                                </li> -->
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- <li>
+                                    <a>Services</a>
+                                    <ul>
+                                        <li><a>Consultancy</a></li>
+                                        <li>
+                                            <a>Project Management</a>
+                                        </li>
+                                    </ul>
+                                </li> -->
+                                <li>
+                                    <a>Technologies</a>
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="technologies/frontend-web.html"
+                                                >Frontend Web</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <header><h1>The Watcher</h1></header>
+                        <div class="section-container" id="topic">
+                            <div class="section-img">
+                                <img
+                                    src="images/large/1.png"
+                                    alt="The Watcher" />
+                            </div>
+                            <div class="section-content">
+                                <p>
+                                    Based on the Parkinson's Law and Pomodoro
+                                    technique, the Watcher shows a full-screen
+                                    countdown timer to generate the urge to
+                                    complete a task. Every activity generates a
+                                    timer visible via the Watcher and background
+                                    notification, so you don't have to open the
+                                    app to stay productive.
+                                </p>
+                                <p>
+                                    Parkinson's Law states that one will always
+                                    prolong a task to use all the time available
+                                    before a deadline. Trick your mind into
+                                    tightening those deadlines and forcing
+                                    yourself to use the minimum amount of time
+                                    to complete an activity.
+                                </p>
+                                <br />
+                                <p>
+                                    Go back to the
+                                    <a href="products/libellus-gallery.html"
+                                        >gallery</a
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <footer class="main-footer">
+                        <div class="footer-container">
+                            <div class="backTop">
+                                <a onclick="window.scrollTo(0, 0)"
+                                    >Back to top &uarr;</a
+                                >
+                            </div>
+                            <div class="footer-links">
+                                <a href="legal-info.html">Legal Information</a>
+                                <a href="references.html"
+                                    >References and Credits</a
+                                >
+                            </div>
+                            <!-- <h2>Graphics</h2>
+                            <ul>
+                                <li>
+                                    <a href="graphics.txt">Citations document</a>
+                                </li>
+                            </ul> -->
+                            <div class="author">
+                                <p>
+                                    Created in October 2024 by
+                                    <a href="https://justinsalcedo.com"
+                                        ><strong>Justin Salcedo</strong></a
+                                    >
+                                    <br />for
+                                    <em
+                                        >WBG 310: Interactive Web Page Scripting
+                                        with Lab</em
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </footer>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

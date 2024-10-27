@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Frontend Web Technologies | Justin Salcedo</title>
+
+        <link rel="preconnect" href="https://rsms.me/" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+        <base href="../" />
+        <link href="smartmenus/sm-core-css.css" rel="stylesheet" />
+        <link href="smartmenus/sm-mine.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/frontend-web.css" />
+
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="smartmenus/jquery.smartmenus.min.js"></script>
+        <script>
+            $(() => {
+                // $('#burger').on('click', () => {
+                //     $('.left-sidebar').toggle()
+                // })
+                $('.sm').smartmenus({
+                    showFunction: function ($ul, complete) {
+                        $ul.slideDown(250, complete)
+                    },
+                    hideFunction: function ($ul, complete) {
+                        $ul.slideUp(250, complete)
+                    },
+                })
+
+                $('.card-content p, .card-content a, .card-img').hide()
+                $('.card-content p, .card-img').hide()
+                $('.showoff-card').hover(function () {
+                    $(this).children('.card-img').fadeIn('easeIn')
+                    $(this)
+                        .children('.card-content')
+                        .children('p')
+                        .fadeIn('easeIn')
+                    $(this)
+                        .children('.card-content')
+                        .children('a')
+                        .fadeIn('easeIn')
+                })
+
+                $('.card-content code').hide()
+
+                $('.collapse-link').click(function (e) {
+                    e.preventDefault()
+                    const code = $(this).parent().children('code')
+                    if (code.is(':hidden')) {
+                        code.slideDown()
+                        $(this).text('Hide example')
+                    } else {
+                        code.slideUp()
+                        $(this).text('See example')
+                    }
+                })
+
+                $('#html-code').text(`<div class="container">
+    <button id="message">Click me!</button>
+</div>
+`)
+                $('#css-code').text(`.container {
+    background-color: whitesmoke;
+}
+
+.button {
+    border: 1px solid rgb(24, 56, 42);
+    width: 40px;
+}`)
+                $('#js-code')
+                    .text(`var messageBtn = document.getElementById('message')
+messageBtn.addEventListener('click', () => {
+    alert("Hello there...")
+})`)
+            })
+            console.log('All good')
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <header class="main-header">
+                <div class="topbar sm">
+                    <button id="burger">
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                    </button>
+                    <div class="logo-container">
+                        <img src="images/logo.png" alt="JS logo" />
+                    </div>
+                    <div class="site-heading-container">
+                        <span>Justin Salcedo<span>'s Blog</span></span>
+                    </div>
+                </div>
+            </header>
+            <div class="mid-container">
+                <section class="left-sidebar">
+                    <p>Left sidebar content goes here</p>
+                </section>
+                <main class="main-content">
+                    <!-- <section class="right-sidebar">
+                        <p>Right sidebar content goes here</p>
+                    </section> -->
+                    <section class="content-body">
+                        <nav>
+                            <ul class="sm sm-mine">
+                                <li><a href="index.html">Home</a></li>
+                                <li>
+                                    <a href="about-us/index.html">About Us</a>
+                                    <ul>
+                                        <li>
+                                            <a href="about-us/story.html"
+                                                >Story</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a>Our Offices</a>
+                                            <ul>
+                                                <li>
+                                                    <a
+                                                        href="about-us/offices/san-marcos-ca.html"
+                                                        >San Marcos, CA</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="about-us/offices/valley-center-ca.html"
+                                                        >Valley Center, CA</a
+                                                    >
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="contact-us/index.html"
+                                        >Contact Us</a
+                                    >
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="contact-us/user-support.html"
+                                                >User Support</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="contact-us/survey-form.html"
+                                                >Survey Form</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a>Products</a>
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="products/libellus-gallery.html"
+                                                >Libellus</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a>Courses</a>
+                                            <ul>
+                                                <li>
+                                                    <a
+                                                        href="products/courses/frontend-development.html"
+                                                        >Frontend Development</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="products/courses/backend-development.html"
+                                                        >Backend Development</a
+                                                    >
+                                                </li>
+                                                <!-- <li>
+                                                    <a
+                                                        >Software Testing</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        >Mobile Development</a
+                                                    >
+                                                </li> -->
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- <li>
+                                    <a>Services</a>
+                                    <ul>
+                                        <li><a>Consultancy</a></li>
+                                        <li>
+                                            <a>Project Management</a>
+                                        </li>
+                                    </ul>
+                                </li> -->
+                                <li>
+                                    <a>Technologies</a>
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="technologies/frontend-web.html"
+                                                >Frontend Web</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <header><h1>Frontend Web Technologies</h1></header>
+                        <p>
+                            HTML, CSS, and JavaScript are the primary
+                            technologies for creating modern websites and
+                            applications. So far, we can semantically structure
+                            information, make it visually appealing, and handle
+                            user events to trigger animations and logic. Hover
+                            on each card to learn more about these technologies.
+                        </p>
+                        <div class="showoff-card">
+                            <div class="card-content">
+                                <h2>HTML</h2>
+                                <p>
+                                    Hypertext Markup Language (HTML) is a
+                                    standard for semantically defining documents
+                                    and applications on the web. HTML5 is its
+                                    last version, and the W3C and the WHATWG
+                                    organizations consider it a living standard
+                                    (WHATWG, 2024). This webpage's code is
+                                    HTML5.
+                                </p>
+                                <a class="collapse-link">See example</a>
+                                <code id="html-code"></code>
+                            </div>
+                            <div class="card-img">
+                                <img
+                                    src="images/html-logo.png"
+                                    alt="HTML5 logo"
+                                    class="transparent" />
+                            </div>
+                        </div>
+                        <div class="showoff-card">
+                            <div class="card-content">
+                                <h2>CSS</h2>
+                                <p>
+                                    Cascading Style Sheets (CSS) are a
+                                    rule-based syntax for styling web documents
+                                    and applications. It determines element and
+                                    text aspects like spacing, colors,
+                                    backgrounds, effects, and fonts (W3C, 2024).
+                                    CSS rules define this container's border and
+                                    padding.
+                                </p>
+                                <a class="collapse-link">See example</a>
+                                <code id="css-code"></code>
+                            </div>
+                            <div class="card-img">
+                                <img
+                                    src="images/css-logo.png"
+                                    alt="CSS3 logo"
+                                    class="transparent portrait" />
+                            </div>
+                        </div>
+                        <div class="showoff-card">
+                            <div class="card-content">
+                                <h2>JavaScript</h2>
+                                <p>
+                                    JavaScript (JS) is an interpreted language
+                                    primarily used to run scripts on the web. We
+                                    use this language to add interactivity and
+                                    logic to web applications. Thanks to its
+                                    multi-paradigm, dynamic nature, JS also
+                                    powers server environments like Node.js (MDN
+                                    contributors, 2024).
+                                </p>
+                                <a class="collapse-link">See example</a>
+                                <code id="js-code"></code>
+                            </div>
+                            <div class="card-img">
+                                <img src="images/js-logo.png" alt="JS logo" />
+                            </div>
+                        </div>
+                    </section>
+                    <footer class="main-footer">
+                        <div class="footer-container">
+                            <div class="backTop">
+                                <a onclick="window.scrollTo(0, 0)"
+                                    >Back to top &uarr;</a
+                                >
+                            </div>
+                            <div class="footer-links">
+                                <a href="legal-info.html">Legal Information</a>
+                                <a href="references.html"
+                                    >References and Credits</a
+                                >
+                            </div>
+                            <!-- <h2>Graphics</h2>
+                            <ul>
+                                <li>
+                                    <a href="graphics.txt">Citations document</a>
+                                </li>
+                            </ul> -->
+                            <div class="author">
+                                <p>
+                                    Created in October 2024 by
+                                    <a href="https://justinsalcedo.com"
+                                        ><strong>Justin Salcedo</strong></a
+                                    >
+                                    <br />for
+                                    <em
+                                        >WBG 310: Interactive Web Page Scripting
+                                        with Lab</em
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </footer>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

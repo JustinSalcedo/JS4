@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WBG310 Final Project | Justin Salcedo</title>
+
+        <link rel="preconnect" href="https://rsms.me/" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+        <link href="smartmenus/sm-core-css.css" rel="stylesheet" />
+        <link href="smartmenus/sm-mine.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="smartmenus/jquery.smartmenus.min.js"></script>
+        <script>
+            $(() => {
+                // $('#burger').on('click', () => {
+                //     $('.left-sidebar').toggle()
+                // })
+                $('.sm').smartmenus({
+                    showFunction: function ($ul, complete) {
+                        $ul.slideDown(250, complete)
+                    },
+                    hideFunction: function ($ul, complete) {
+                        $ul.slideUp(250, complete)
+                    },
+                })
+            })
+            console.log('All good')
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <header class="main-header">
+                <div class="topbar sm">
+                    <button id="burger">
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                    </button>
+                    <div class="logo-container">
+                        <img src="images/logo.png" alt="JS logo" />
+                    </div>
+                    <div class="site-heading-container">
+                        <span>Justin Salcedo<span>'s Blog</span></span>
+                    </div>
+                </div>
+            </header>
+            <div class="mid-container">
+                <section class="left-sidebar">
+                    <p>Left sidebar content goes here</p>
+                </section>
+                <main class="main-content">
+                    <!-- <section class="right-sidebar">
+                        <p>Right sidebar content goes here</p>
+                    </section> -->
+                    <section class="content-body">
+                        <nav>
+                            <ul class="sm sm-mine">
+                                <li><a href="index.html">Home</a></li>
+                                <li>
+                                    <a href="about-us/index.html">About Us</a>
+                                    <ul>
+                                        <li>
+                                            <a href="about-us/story.html"
+                                                >Story</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a>Our Offices</a>
+                                            <ul>
+                                                <li>
+                                                    <a
+                                                        href="about-us/offices/san-marcos-ca.html"
+                                                        >San Marcos, CA</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="about-us/offices/valley-center-ca.html"
+                                                        >Valley Center, CA</a
+                                                    >
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="contact-us/index.html"
+                                        >Contact Us</a
+                                    >
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="contact-us/user-support.html"
+                                                >User Support</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="contact-us/survey-form.html"
+                                                >Survey Form</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a>Products</a>
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="products/libellus-gallery.html"
+                                                >Libellus</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a>Courses</a>
+                                            <ul>
+                                                <li>
+                                                    <a
+                                                        href="products/courses/frontend-development.html"
+                                                        >Frontend Development</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="products/courses/backend-development.html"
+                                                        >Backend Development</a
+                                                    >
+                                                </li>
+                                                <!-- <li>
+                                                    <a
+                                                        >Software Testing</a
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        >Mobile Development</a
+                                                    >
+                                                </li> -->
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- <li>
+                                    <a>Services</a>
+                                    <ul>
+                                        <li><a>Consultancy</a></li>
+                                        <li>
+                                            <a>Project Management</a>
+                                        </li>
+                                    </ul>
+                                </li> -->
+                                <li>
+                                    <a>Technologies</a>
+                                    <ul>
+                                        <li>
+                                            <a
+                                                href="technologies/frontend-web.html"
+                                                >Frontend Web</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <header><h1>Justin Salcedo's Final Project</h1></header>
+                        <p>
+                            This project is a multi-page website about software
+                            development topics, especially frontend and backend
+                            web technologies. These pages feature modern
+                            interactions and transitions for popular web design
+                            elements. The motivation behind this site is to
+                            reflect the knowledge learned during the
+                            <em
+                                >WBG 310: Interactive Web Page Scripting with
+                                Lab</em
+                            >
+                            course, where I created professional web
+                            applications with clean styles and solid business
+                            logic using CSS3 and jQuery, a lightweight
+                            JavaScript library.
+                        </p>
+                        <p>
+                            I selected a dark theme for this site because it
+                            minimizes visual fatigue and screen glare caused by
+                            extensive white backgrounds and high-contrast
+                            elements. Besides, I'm familiar with designing dark
+                            user interfaces. I chose the Inter font family
+                            because it eases reading and is ideal for modern
+                            UIs. By keeping a line height of 1.625 and
+                            paragraphs short, I ensure visitors aren't bothered
+                            by clustered text.
+                        </p>
+                        <p>
+                            The background colors have slight tone differences,
+                            enough to distinguish the header, navigation bar,
+                            and footer from the main content. Moreover, I
+                            included high-quality images in PNG format with
+                            edited resolution to avoid long content load times.
+                            Most images are free for public use, and some are
+                            part of my authorship.
+                        </p>
+
+                        <h2>Features</h2>
+                        <p>
+                            All pages display a drop-down navigation bar that
+                            supports nested link menus, responding to the
+                            cursor's rollover. This site is mobile-first and
+                            responsive, meaning it will adapt its layout and
+                            elements according to viewport sizes, starting from
+                            smaller screens. The following pages display unique
+                            characteristics:
+                        </p>
+                        <ul>
+                            <li>
+                                <b>About Us > Our Offices:</b> Business
+                                directions use Google Maps widgets to facilitate
+                                physical location to the user. Widgets adapt to
+                                the screen width.
+                            </li>
+                            <li>
+                                <b>Libellus Gallery:</b> Clicking on a thumbnail
+                                displays a page overlay with the image in full
+                                resolution. This overlay also presents a sliding
+                                gallery to see the rest of the pictures.
+                                Clicking on the image on view takes the user to
+                                a related topic page.
+                            </li>
+                            <li>
+                                <b>Contact Us:</b> The form uses three text
+                                boxes, a text area, a radio group with two
+                                options, and four checkboxes for the user to
+                                submit a contact request. The form supports
+                                input validation via HTML attributes, jQuery,
+                                JavaScript, and CSS to style error messages.
+                            </li>
+                        </ul>
+                        <p>
+                            You can visit this site at
+                            <a
+                                href="https://justinsalcedo.com/academic-portfolio/wbg310-final-project/"
+                                >https://justinsalcedo.com/academic-portfolio/wbg310-final-project/</a
+                            >
+                            (or maybe you're already here). Check out my other
+                            works, too!
+                        </p>
+                    </section>
+                    <footer class="main-footer">
+                        <div class="footer-container">
+                            <div class="backTop">
+                                <a onclick="window.scrollTo(0, 0)"
+                                    >Back to top &uarr;</a
+                                >
+                            </div>
+                            <div class="footer-links">
+                                <a href="legal-info.html">Legal Information</a>
+                                <a href="references.html"
+                                    >References and Credits</a
+                                >
+                            </div>
+                            <!-- <h2>Graphics</h2>
+                            <ul>
+                                <li>
+                                    <a href="graphics.txt">Citations document</a>
+                                </li>
+                            </ul> -->
+                            <div class="author">
+                                <p>
+                                    Created in October 2024 by
+                                    <a href="https://justinsalcedo.com"
+                                        ><strong>Justin Salcedo</strong></a
+                                    >
+                                    <br />for
+                                    <em
+                                        >WBG 310: Interactive Web Page Scripting
+                                        with Lab</em
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </footer>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>
